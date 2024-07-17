@@ -4,6 +4,8 @@ import { StylistsIndex } from "./StylistsIndex";
 import { Signup } from "./Signup";
 import { Modal } from "./Modal";
 import { Login } from "./Login";
+import { Routes, Route } from "react-router-dom";
+import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
   const [stylists, setStylists] = useState([]);
@@ -20,9 +22,11 @@ export function Content() {
 
   return (
     <div>
-      <Signup />
-      <Login />
-      <StylistsIndex stylists={stylists} />
+      <Routes>
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/stylists" element={<StylistsIndex stylists={stylists} />} />
+      </Routes>
     </div>
   );
 }
