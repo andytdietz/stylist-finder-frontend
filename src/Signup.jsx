@@ -44,26 +44,59 @@ export function Signup() {
   };
 
   return (
-    <div id="signup">
-      <h1>Signup</h1>
-      <ul>
-        {errors.map((error) => (
-          <li key={error}>{error}</li>
+    <div id="signup" className="max-w-lg mx-auto bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <h1 className="text-2xl font-bold mb-4">Signup</h1>
+      <ul className="mb-4">
+        {errors.map((error, index) => (
+          <li key={index} className="text-red-500">
+            {error}
+          </li>
         ))}
       </ul>
       <form onSubmit={handleSubmit}>
-        <div>
-          Email: <input name="email" type="email" />
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="email">
+            Email
+          </label>
+          <input
+            name="email"
+            type="email"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Email"
+          />
         </div>
-        <div>
-          Password: <input name="password" type="password" />
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password">
+            Password
+          </label>
+          <input
+            name="password"
+            type="password"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Password"
+          />
         </div>
-        <div>
-          Password confirmation: <input name="password_confirmation" type="password" />
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="password_confirmation">
+            Password confirmation
+          </label>
+          <input
+            name="password_confirmation"
+            type="password"
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+            placeholder="Password confirmation"
+          />
         </div>
-        <div>
-          User Type:
-          <select name="user_type" value={userType} onChange={handleUserTypeChange}>
+        <div className="mb-4">
+          <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="user_type">
+            User Type
+          </label>
+          <select
+            name="user_type"
+            value={userType}
+            onChange={handleUserTypeChange}
+            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          >
             <option value="client">Client</option>
             <option value="stylist">Stylist</option>
           </select>
@@ -71,21 +104,58 @@ export function Signup() {
 
         {userType === "stylist" && (
           <>
-            <div>
-              Name: <input name="name" type="text" />
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="name">
+                Name
+              </label>
+              <input
+                name="name"
+                type="text"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Name"
+              />
             </div>
-            <div>
-              Address1: <input name="address1" type="text" />
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="address1">
+                Address1
+              </label>
+              <input
+                name="address1"
+                type="text"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Address1"
+              />
             </div>
-            <div>
-              Address2: <input name="address2" type="text" />
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="address2">
+                Address2
+              </label>
+              <input
+                name="address2"
+                type="text"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Address2"
+              />
             </div>
-            <div>
-              City: <input name="city" type="text" />
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="city">
+                City
+              </label>
+              <input
+                name="city"
+                type="text"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="City"
+              />
             </div>
-            <div>
-              State:
-              <select name="state">
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="state">
+                State
+              </label>
+              <select
+                name="state"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              >
                 <option value="">Select a state</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -139,31 +209,86 @@ export function Signup() {
                 <option value="WY">Wyoming</option>
               </select>
             </div>
-            <div>
-              Zip: <input name="zip" type="text" />
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="zip">
+                Zip
+              </label>
+              <input
+                name="zip"
+                type="text"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Zip"
+              />
             </div>
-            <div>
-              Website: <input name="website" type="text" />
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="website">
+                Website
+              </label>
+              <input
+                name="website"
+                type="text"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Website"
+              />
             </div>
-            <div>
-              Instagram URL: <input name="instagram_url" type="text" />
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="instagram_url">
+                Instagram URL
+              </label>
+              <input
+                name="instagram_url"
+                type="text"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Instagram URL"
+              />
             </div>
-            <div>
-              Facebook URL: <input name="facebook_url" type="text" />
+            <div className="mb-4">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="facebook_url">
+                Facebook URL
+              </label>
+              <input
+                name="facebook_url"
+                type="text"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Facebook URL"
+              />
             </div>
-            <div>
-              Booking URL: <input name="booking_url" type="text" />
+            <div className="mb-6">
+              <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="booking_url">
+                Booking URL
+              </label>
+              <input
+                name="booking_url"
+                type="text"
+                className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                placeholder="Booking URL"
+              />
             </div>
           </>
         )}
 
         {userType === "client" && (
-          <div>
-            Username: <input name="username" type="text" />
+          <div className="mb-4">
+            <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="username">
+              Username
+            </label>
+            <input
+              name="username"
+              type="text"
+              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Username"
+            />
           </div>
         )}
 
-        <button type="submit">Signup</button>
+        <div>
+          <button
+            type="submit"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          >
+            Signup
+          </button>
+        </div>
       </form>
     </div>
   );

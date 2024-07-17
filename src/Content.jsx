@@ -5,6 +5,7 @@ import { Signup } from "./Signup";
 import { Modal } from "./Modal";
 import { Login } from "./Login";
 import { Routes, Route } from "react-router-dom";
+import { StylistsShowPage } from "./StylistsShowPage";
 import { LogoutLink } from "./LogoutLink";
 
 export function Content() {
@@ -23,9 +24,11 @@ export function Content() {
   return (
     <div>
       <Routes>
+        <Route path="/" element={<StylistsIndex stylists={stylists} />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/login" element={<Login />} />
         <Route path="/stylists" element={<StylistsIndex stylists={stylists} />} />
+        <Route path="/stylists/:id" element={<StylistsShowPage />} />
       </Routes>
     </div>
   );
