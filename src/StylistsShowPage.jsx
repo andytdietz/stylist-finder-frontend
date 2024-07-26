@@ -35,7 +35,6 @@ export function StylistsShowPage() {
         <div className="flex items-center mb-4">
           <div className="mr-20">
             {" "}
-            {/* Increased margin-right to move image further right */}
             <p className="text-lg mb-2">{stylist.address1}</p>
             <p className="text-lg mb-2">{stylist.address2}</p>
             <p className="text-lg mb-2">
@@ -43,7 +42,6 @@ export function StylistsShowPage() {
             </p>
           </div>
           <img src={hardcodedImageUrl} alt="Stylist Profile" className="h-50 w-50 rounded-full object-cover" />{" "}
-          {/* Increased size of the image */}
         </div>
         <div className="flex space-x-4 mb-4">
           <a href={formatUrl(stylist.instagram_url)} target="_blank" rel="noopener noreferrer">
@@ -64,7 +62,6 @@ export function StylistsShowPage() {
   );
 }
 
-// Function to format URLs with http:// if missing
 function formatUrl(url) {
   if (!url.startsWith("http://") && !url.startsWith("https://")) {
     return `http://${url}`;

@@ -4,20 +4,20 @@ import { LogoutLink } from "./LogoutLink";
 
 export function Header() {
   return (
-    <header className="bg-gray-800 py-4">
-      <nav className="container mx-auto flex items-center justify-between">
-        <Link to="/" className="text-white text-2xl font-bold">
-          Stylist Finder
+    <header className="bg-gray-700 py-2">
+      <nav className="container mx-auto flex items-center">
+        <Link to="/" className="flex items-center">
+          <img src="/Beau - 1.png" alt="Logo" className="h-36 w-36" />
         </Link>
-        <div>
-          <Link to="/signup" className="text-white hover:text-gray-300 ml-4 px-3 py-2 rounded-md">
+        <div className="flex items-center space-x-6 ml-8">
+          <Link to="/stylists" className="text-white text-lg hover:text-gray-300 px-4 py-2 rounded-md">
+            Stylists
+          </Link>
+          <Link to="/signup" className="text-white text-lg hover:text-gray-300 px-4 py-2 rounded-md">
             Signup
           </Link>
-          <Link to="/login" className="text-white hover:text-gray-300 ml-4 px-3 py-2 rounded-md">
+          <Link to="/login" className="text-white text-lg hover:text-gray-300 px-4 py-2 rounded-md">
             Login
-          </Link>
-          <Link to="/stylists" className="text-white hover:text-gray-300 ml-4 px-3 py-2 rounded-md">
-            Stylists
           </Link>
           <LogoutLink />
         </div>

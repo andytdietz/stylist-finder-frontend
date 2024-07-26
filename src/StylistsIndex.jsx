@@ -21,40 +21,6 @@ export function StylistsIndex(props) {
               <p className="text-gray-600 mb-2">
                 {stylist.city}, {stylist.state}
               </p>
-              <div className="flex space-x-4 items-center mb-2">
-                <a
-                  href={formatUrl(stylist.website)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <GlobeAltIcon className="h-8 w-8 text-blue-500" />
-                </a>
-                <a
-                  href={formatUrl(stylist.instagram_url)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <img src="/Instagram_Glyph_Gradient.png" alt="Instagram Logo" className="h-6" />
-                </a>
-                <a
-                  href={formatUrl(stylist.facebook_url)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <img src="/Facebook_Logo_Primary.png" alt="Facebook Logo" className="h-6" />
-                </a>
-                <a
-                  href={formatUrl(stylist.booking_url)}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <CalendarIcon className="h-6 w-6 text-blue-500" />
-                </a>
-              </div>
             </div>
             <div className="md:w-1/4">
               <img
@@ -70,8 +36,8 @@ export function StylistsIndex(props) {
   );
 }
 
-// Function to format URLs with http:// if missing
 function formatUrl(url) {
+  if (!url) return "#"; // or return an empty string
   if (!url.startsWith("http://") && !url.startsWith("https://")) {
     return `http://${url}`;
   }
